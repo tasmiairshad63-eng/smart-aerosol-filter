@@ -19,9 +19,11 @@
       --orange:#ffb258;
       --pink:#ff8598;
       --purple:#c79cff;
+      --navy:#0c326e;
       --r:24px;
       --max:1180px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -33,81 +35,103 @@
     }
     a{color:inherit;text-decoration:none}
     .wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+
     .nav{
-      position:fixed;inset:0 0 auto 0;z-index:100;
-      height:70px;background:rgba(13,16,22,.78);backdrop-filter:blur(15px);
-      border-bottom:1px solid var(--line);
+      position:fixed; inset:0 0 auto 0; z-index:100;
+      min-height:70px; background:rgba(13,16,22,.84);
+      backdrop-filter:blur(15px); border-bottom:1px solid var(--line);
     }
-    .nav .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{font-weight:800;letter-spacing:.2px;font-size:15px;white-space:nowrap}
+    .nav .wrap{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:850;letter-spacing:.2px;font-size:15px;white-space:nowrap}
     .brand span{color:var(--cyan)}
-    .links{display:flex;align-items:center;gap:19px;font-size:13px;color:#d8e0ea}
-    .links a{opacity:.8;transition:.2s}
+    .links{display:flex;align-items:center;gap:18px;font-size:13px;color:#d8e0ea}
+    .links a{opacity:.82;transition:.2s}
     .links a:hover{opacity:1;color:var(--cyan)}
-    .mobile-menu{display:none;border:1px solid var(--line);background:transparent;color:white;padding:7px 10px;border-radius:10px;font-size:16px}
+    .mobile-menu{
+      display:none;border:1px solid var(--line);background:transparent;color:white;
+      padding:7px 10px;border-radius:10px;font-size:16px;cursor:pointer
+    }
+
     .hero{
       min-height:100svh;display:grid;place-items:center;position:relative;overflow:hidden;
       background:
-       radial-gradient(circle at 15% 20%, rgba(98,232,223,.13), transparent 27%),
-       radial-gradient(circle at 85% 30%, rgba(199,156,255,.12), transparent 28%),
-       linear-gradient(145deg,#0d1016 0%,#111a24 52%,#0d1016 100%);
+        radial-gradient(circle at 14% 18%,rgba(98,232,223,.15),transparent 28%),
+        radial-gradient(circle at 86% 76%,rgba(199,156,255,.13),transparent 28%),
+        linear-gradient(145deg,#0d1016 0%,#111a24 52%,#0d1016 100%);
     }
-    .grid-bg{position:absolute;inset:0;opacity:.3;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:65px 65px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
-    .orb{position:absolute;border-radius:50%;filter:blur(1px);opacity:.5;animation:drift 10s ease-in-out infinite alternate}
+    .grid-bg{
+      position:absolute; inset:0; opacity:.3;
+      background-image:
+        linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+      background-size:65px 65px;
+      mask-image:linear-gradient(to bottom,black,transparent 85%);
+    }
+    .orb{position:absolute;border-radius:50%;filter:blur(1px);opacity:.55;animation:drift 10s ease-in-out infinite alternate}
     .orb.a{width:260px;height:260px;background:radial-gradient(circle,#62e8df,transparent 68%);top:14%;left:-5%}
     .orb.b{width:340px;height:340px;background:radial-gradient(circle,#c79cff,transparent 66%);right:-8%;bottom:2%;animation-delay:-3s}
     @keyframes drift{to{transform:translate(38px,-22px) scale(1.1)}}
-    .hero-content{position:relative;z-index:1;padding-top:80px}
+    .hero-content{position:relative;z-index:1;padding-top:90px;padding-bottom:50px}
     .kicker{font-size:13px;text-transform:uppercase;letter-spacing:.15em;color:var(--cyan);font-weight:800}
     h1{font-size:clamp(48px,8vw,112px);line-height:.92;letter-spacing:-.065em;margin:18px 0 26px;max-width:980px}
     h1 em{font-style:normal;color:var(--cyan)}
-    .lead{max-width:720px;color:#b8c5d2;font-size:clamp(18px,2vw,25px);line-height:1.5}
+    .lead{max-width:760px;color:#b8c5d2;font-size:clamp(18px,2vw,25px);line-height:1.5}
     .paper-row{display:flex;flex-wrap:wrap;gap:11px;margin-top:34px}
-    .paper-chip{border:1px solid var(--line);padding:10px 13px;border-radius:999px;font-size:13px;background:rgba(255,255,255,.04);color:#e7edf4}
-    .scroll-note{display:inline-flex;align-items:center;gap:9px;margin-top:48px;color:#a5b3c1;font-size:13px}
+    .paper-chip{
+      border:1px solid var(--line);padding:10px 13px;border-radius:999px;font-size:13px;
+      background:rgba(255,255,255,.04);color:#e7edf4
+    }
+    .scroll-note{display:inline-flex;align-items:center;gap:9px;margin-top:45px;color:#a5b3c1;font-size:13px}
     .scroll-note b{font-size:22px;color:var(--cyan);line-height:0}
-    .section{padding:128px 0}
+
+    .section{padding:120px 0}
     .section.dark{background:var(--ink)}
     .section.light{background:var(--paper);color:var(--ink)}
     .section.white{background:#fff;color:var(--ink)}
     .section.tint{background:linear-gradient(180deg,#eef8f6,#f5f4ef);color:var(--ink)}
-    .section-tag{display:flex;align-items:center;gap:10px;color:var(--cyan);font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.1em}
+    .section-tag{
+      display:flex;align-items:center;gap:10px;color:var(--cyan);font-size:14px;
+      font-weight:800;text-transform:uppercase;letter-spacing:.1em
+    }
     .light .section-tag,.white .section-tag,.tint .section-tag{color:#167c79}
     .section-no{font-size:25px;line-height:1}
-    h2{font-size:clamp(37px,5vw,72px);line-height:.98;letter-spacing:-.06em;margin:16px 0 19px;max-width:900px}
-    .intro{font-size:clamp(17px,1.8vw,23px);line-height:1.5;max-width:810px;color:#aebdca}
+    h2{font-size:clamp(37px,5vw,70px);line-height:.98;letter-spacing:-.06em;margin:16px 0 19px;max-width:920px}
+    .intro{font-size:clamp(17px,1.8vw,23px);line-height:1.5;max-width:900px;color:#aebdca}
     .light .intro,.white .intro,.tint .intro{color:#53606b}
+
+    /* Section 01 */
     .mechanism-tabs{margin-top:44px}
     .tab-buttons{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
-    .tab-button{border:1px solid var(--line);background:rgba(255,255,255,.04);color:#dfe8ee;padding:12px 15px;border-radius:14px;font-weight:800;cursor:pointer;font-size:14px}
+    .tab-button{
+      border:1px solid var(--line);background:rgba(255,255,255,.04);color:#dfe8ee;padding:12px 15px;
+      border-radius:14px;font-weight:800;cursor:pointer;font-size:14px;transition:.2s
+    }
     .tab-button.active{background:var(--cyan);color:#082021;border-color:var(--cyan)}
-    .mechanism-panel{display:none;grid-template-columns:1fr 1.12fr;gap:28px;align-items:stretch}
+    .mechanism-panel{display:none;grid-template-columns:.9fr 1.25fr;gap:28px;align-items:stretch}
     .mechanism-panel.active{display:grid}
     .paper-note{border:1px solid var(--line);border-radius:var(--r);padding:30px;background:rgba(255,255,255,.035)}
     .paper-note .mini{font-size:13px;color:var(--cyan);font-weight:800;text-transform:uppercase;letter-spacing:.08em}
-    .paper-note h3{font-size:clamp(28px,3vw,43px);line-height:1;margin:14px 0}
+    .paper-note h3{font-size:clamp(27px,3vw,42px);line-height:1;margin:14px 0}
     .paper-note p{font-size:17px;line-height:1.55;color:#c0cdd7}
-    .formula{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#c9fffa;border-left:2px solid var(--cyan);padding-left:12px;margin-top:25px}
-    .visual{min-height:390px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(145deg,rgba(118,168,255,.12),rgba(98,232,223,.04));position:relative;overflow:hidden}
-    .visual-label{position:absolute;top:18px;left:20px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#b7c5d1;font-weight:800}
-    .fiber{position:absolute;height:8px;border-radius:20px;background:#d8f0f0;box-shadow:0 0 14px rgba(98,232,223,.55);transform-origin:left}
-    .drop{position:absolute;border-radius:50%;animation:bob 3.2s ease-in-out infinite alternate}
-    @keyframes bob{to{transform:translateY(-15px)}}
-    .dendrite{position:absolute;left:73%;top:43%;width:80px;height:80px}
-    .dendrite span{position:absolute;width:10px;height:10px;border-radius:50%;background:var(--purple);box-shadow:0 0 12px var(--purple)}
-    .dendrite i{position:absolute;left:38px;top:38px;width:2px;height:45px;background:var(--purple);transform-origin:top}
-    .sun{position:absolute;width:92px;height:92px;border-radius:50%;background:#ffcc62;right:10%;top:13%;box-shadow:0 0 0 14px rgba(255,204,98,.09),0 0 55px rgba(255,204,98,.45)}
-    .mask{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);width:68%;height:150px;border:3px solid #c8f6f1;border-radius:45px;background:rgba(98,232,223,.1)}
-    .mask:before,.mask:after{content:"";position:absolute;top:46px;width:70px;height:50px;border:3px solid #c8f6f1;border-radius:50%}
-    .mask:before{left:-65px;border-right:0}.mask:after{right:-65px;border-left:0}
-    .mask-lines{position:absolute;inset:24px 10%;background:repeating-linear-gradient(0deg,transparent 0 14px,rgba(98,232,223,.8) 15px 17px,transparent 18px 26px)}
-    .p-dot{position:absolute;width:18px;height:18px;border-radius:50%;box-shadow:0 0 12px currentColor}
-    .web{position:absolute;inset:70px 38px 38px;background:repeating-linear-gradient(0deg,transparent 0 19px,rgba(125,186,255,.55) 20px 22px,transparent 23px 42px),repeating-linear-gradient(90deg,transparent 0 25px,rgba(125,186,255,.42) 26px 28px,transparent 29px 47px);transform:skewY(-6deg);border-radius:18px;opacity:.9}
-    .mof{position:absolute;right:15%;top:38%;width:126px;height:126px;border:2px solid var(--lime);transform:rotate(45deg);box-shadow:0 0 22px rgba(186,244,119,.28)}
-    .mof:before,.mof:after{content:"";position:absolute;background:var(--lime);opacity:.75}.mof:before{width:2px;height:180px;left:62px;top:-27px}.mof:after{width:180px;height:2px;left:-27px;top:62px}
-    .signal{position:absolute;right:11%;bottom:12%;font-weight:900;color:var(--pink);font-size:23px;letter-spacing:.04em}
+    .formula{
+      font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:#c9fffa;
+      border-left:2px solid var(--cyan);padding-left:12px;margin-top:25px;line-height:1.55
+    }
+    .scientific-svg{
+      width:100%; height:100%; min-height:385px; display:block;border:1px solid var(--line);
+      border-radius:var(--r); background:linear-gradient(145deg,rgba(118,168,255,.12),rgba(98,232,223,.04))
+    }
+    .scientific-svg .small{font:700 13px Inter,Arial,sans-serif;letter-spacing:.08em;fill:#dbe9f1}
+    .scientific-svg .label{font:700 18px Inter,Arial,sans-serif;fill:#ffffff}
+    .scientific-svg .caption{font:15px Inter,Arial,sans-serif;fill:#c9d6e2}
+    .scientific-svg .line{stroke:#d8f0f0;stroke-width:8;stroke-linecap:round}
+    .scientific-svg .darkline{stroke:rgba(255,255,255,.18);stroke-width:1.3}
+    .scientific-svg .arrow{fill:none;stroke:#62e8df;stroke-width:3;stroke-dasharray:8 7}
+    .scientific-svg .arrow2{fill:none;stroke:#ffb258;stroke-width:3;stroke-dasharray:8 7}
+
+    /* Section 02 */
     .strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:42px}
-    .strategy{border:1px solid var(--darkline);border-radius:20px;padding:25px;min-height:240px;background:#fff;transition:.25s}
+    .strategy{border:1px solid var(--darkline);border-radius:20px;padding:25px;min-height:235px;background:#fff;transition:.25s}
     .strategy:hover{transform:translateY(-5px);box-shadow:0 18px 42px rgba(15,22,29,.10)}
     .strategy .n{font-size:14px;font-weight:900;color:#157e79}
     .strategy h3{font-size:29px;line-height:1;margin:14px 0 11px;letter-spacing:-.04em}
@@ -115,88 +139,106 @@
     .paper-accordion{margin-top:45px;display:grid;gap:16px}
     .paper-block{border-top:1px solid var(--darkline);padding-top:23px}
     .paper-head{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:start;margin-bottom:17px}
-    .paper-badge{font-size:13px;font-weight:900;color:#187e7a;text-transform:uppercase;letter-spacing:.08em;padding-top:5px}
-    .paper-head h3{font-size:clamp(24px,3vw,39px);line-height:1;margin:0 0 6px;letter-spacing:-.04em}
-    .paper-head p{margin:0;color:#59646f;font-size:15px}
-    details{border:1px solid var(--darkline);border-radius:14px;background:#fff;margin:10px 0;padding:0 18px}
-    summary{list-style:none;padding:17px 25px 17px 0;cursor:pointer;font-weight:800;position:relative;font-size:16px}
-    summary:after{content:"+";position:absolute;right:0;top:12px;font-size:26px;color:#167c79;font-weight:400}
-    details[open] summary:after{content:"–"}
-    details p{border-top:1px solid var(--darkline);margin:0;padding:16px 0 20px;line-height:1.55;color:#53606b;font-size:16px}
-    .number-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;margin-top:43px;align-items:stretch}
-    .metric-panel{background:#131b24;color:#e6eef5;border-radius:var(--r);padding:30px;position:relative;overflow:hidden}
-    .metric-panel:before{content:"";position:absolute;inset:auto -30px -80px auto;width:230px;height:230px;border-radius:50%;background:radial-gradient(circle,var(--purple),transparent 66%);opacity:.32}
-    .metric-panel h3{font-size:28px;margin:0 0 24px;letter-spacing:-.04em}
-    .metric-row{display:flex;align-items:end;gap:15px;border-top:1px solid rgba(255,255,255,.12);padding:17px 0}
-    .metric-value{font-weight:900;font-size:46px;line-height:.9;letter-spacing:-.06em;color:var(--cyan);min-width:100px}
-    .metric-row p{margin:0;font-size:15px;color:#b5c2ce;line-height:1.45}
-    .story-panel{border-radius:var(--r);padding:32px;background:linear-gradient(145deg,#dff8f5,#f7f8ec);border:1px solid rgba(13,16,22,.1)}
-    .story-panel h3{font-size:31px;margin:0 0 17px;letter-spacing:-.04em}
-    .story-panel p{font-size:17px;line-height:1.55;color:#43515d}
-    .comparison-controls{display:flex;flex-wrap:wrap;gap:10px;margin:32px 0 16px;align-items:center}
-    .btn{border:1px solid var(--darkline);background:#fff;color:var(--ink);padding:11px 14px;border-radius:11px;font-weight:800;cursor:pointer}
-    .btn.primary{background:var(--ink);color:#fff;border-color:var(--ink)}
-    .progress{font-size:14px;color:#65717c;font-weight:800;margin-left:auto}
-    .comparison{border:1px solid var(--darkline);border-radius:18px;overflow:auto;background:#fff}
-    table{border-collapse:collapse;width:100%;min-width:760px}
-    th,td{padding:17px 18px;text-align:left;border-bottom:1px solid var(--darkline);vertical-align:top;font-size:15px;line-height:1.42}
-    th{font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:#4e5b65;background:#f0efe9}
-    td:first-child{font-weight:900;width:17%}
-    tr.hidden-row{display:none}
-    .gap-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center;margin-top:42px}
-    .quote{font-size:clamp(30px,4vw,60px);line-height:1.08;letter-spacing:-.06em;font-weight:900}
-    .quote mark{background:none;color:#167c79}
-    .gap-map{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
-    .gap-card{border-radius:18px;padding:19px;border:1px solid var(--darkline);background:#fff}
-    .gap-card b{display:block;font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:#167c79;margin-bottom:8px}
-    .gap-card p{color:#56616b;margin:0;line-height:1.45;font-size:15px}
-    .sources{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
-    .source-card{border:1px solid var(--line);border-radius:20px;padding:24px;background:rgba(255,255,255,.035);transition:.25s}
-    .source-card:hover{transform:translateY(-5px);border-color:rgba(98,232,223,.7)}
-    .source-card .year{font-size:13px;font-weight:900;color:var(--cyan);letter-spacing:.08em}
-    .source-card h3{font-size:24px;line-height:1.05;letter-spacing:-.04em;margin:14px 0}
-    .source-card p{font-size:14px;color:#b5c2ce;line-height:1.5}
-    .verdict{min-height:76svh;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 50% 20%,rgba(98,232,223,.15),transparent 35%),linear-gradient(135deg,#0d1016,#18232c)}
-    .verdict .wrap{padding:110px 0}
-    .verdict h2{margin-left:auto;margin-right:auto;max-width:1000px}
-    .verdict p{max-width:840px;margin:0 auto;color:#bac7d2;font-size:clamp(18px,2vw,23px);line-height:1.55}
-    .footer{padding:30px 0;background:#0a0d12;color:#8393a2;font-size:13px;border-top:1px solid var(--line)}
+    .paper-badge{
+      display:inline-grid;place-items:center;border-radius:999px;background:#dff5f2;color:#126b68;
+      padding:8px 10px;font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em
+    }
+    .paper-head h3{margin:0;font-size:29px;letter-spacing:-.04em;line-height:1.05}
+    .paper-head p{margin:7px 0 0;color:#68737c}
+    details{border:1px solid var(--darkline);border-radius:14px;padding:14px 17px;margin-top:10px;background:#fff}
+    summary{font-weight:800;cursor:pointer}
+    details p{margin:12px 0 2px;color:#56616b;line-height:1.55}
 
-    .scientific-svg{width:100%;height:100%;min-height:390px;display:block}
-    .scientific-svg text{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
-    .scientific-svg .small{font-size:12px;fill:#b9c8d4;font-weight:700;letter-spacing:.04em}
-    .scientific-svg .label{font-size:14px;fill:#ecf7f9;font-weight:800}
-    .scientific-svg .caption{font-size:12px;fill:#91a8b8}
-    .scientific-svg .accent{fill:#62e8df}
-    .scientific-svg .line{stroke:#d9f5f2;stroke-width:4;stroke-linecap:round}
-    @media(max-width:850px){.scientific-svg{min-height:310px}}
+    /* Section 03 */
+    .comparison-controls{margin-top:34px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .btn{
+      border:1px solid var(--darkline);background:#fff;color:#26323b;padding:11px 15px;
+      border-radius:12px;font-weight:850;cursor:pointer;font-size:14px
+    }
+    .btn.primary{background:#147b78;color:white;border-color:#147b78}
+    .row-count{font-size:14px;color:#57636c;margin-left:3px}
+    .table-wrap{margin-top:18px;overflow-x:auto;border:1px solid var(--darkline);border-radius:20px;background:#fff}
+    table{width:100%;border-collapse:collapse;min-width:830px}
+    th,td{padding:18px 17px;text-align:left;vertical-align:top;border-bottom:1px solid var(--darkline)}
+    th{font-size:14px;background:#e9f6f4;color:#145d5a}
+    td{color:#4f5b65;line-height:1.45;font-size:15px}
+    th:first-child,td:first-child{font-weight:850;color:#1c2a33;width:18%}
+    tr:last-child td{border-bottom:0}
+    .hidden-row{display:none}
+    .hidden-row.show{display:table-row}
+
+    /* Section 04: proposed layered design */
+    .design-section{background:linear-gradient(180deg,#ffffff 0%,#f5f7f9 100%)}
+    .design-section .section-tag{color:#167c79}
+    .layered-subtitle{
+      margin:0 0 30px;max-width:840px;color:var(--navy);font-weight:750;
+      font-size:clamp(17px,1.7vw,22px);line-height:1.72
+    }
+    .layer-stack{display:grid;gap:13px;max-width:920px;margin:0 auto}
+    .layer-card{
+      position:relative;padding:20px 32px;border:2px solid #274d7a;border-radius:18px;
+      background:#f2f2f2;text-align:center;box-shadow:0 8px 20px rgba(10,39,83,.05)
+    }
+    .layer-card:nth-child(2){background:#e9e9e9}
+    .layer-card:nth-child(3){background:#dedede}
+    .layer-card:nth-child(4){background:#d4d4d4}
+    .layer-card h3{margin:0 0 7px;color:#101010;font-size:clamp(20px,2.3vw,27px);line-height:1.05}
+    .layer-card p{margin:0;color:#151515;font-size:clamp(16px,1.65vw,20px);line-height:1.45}
+    .design-note{
+      max-width:920px;margin:24px auto 0;padding:14px 18px;border-radius:14px;
+      background:#e8f7f5;color:#205c5a;line-height:1.55;text-align:center;font-size:16px
+    }
+
+    /* Section 05 */
+    .sources{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+    .source-card{border:1px solid var(--line);border-radius:20px;padding:24px;background:rgba(255,255,255,.035)}
+    .source-card .year{font-size:13px;font-weight:900;color:var(--cyan);letter-spacing:.08em}
+    .source-card h3{font-size:25px;line-height:1.04;letter-spacing:-.04em;margin:13px 0}
+    .source-card p{margin:0;color:#c2ced8;line-height:1.52;font-size:15px}
+
+    /* Section 06 */
+    .verdict{
+      padding:130px 0;background:
+      radial-gradient(circle at 10% 20%,rgba(98,232,223,.18),transparent 28%),
+      radial-gradient(circle at 90% 80%,rgba(199,156,255,.15),transparent 28%),
+      linear-gradient(140deg,#0d1016,#172632);text-align:center
+    }
+    .verdict h2{margin:18px auto;max-width:980px}
+    .verdict p{max-width:800px;margin:0 auto;color:#bdccd7;font-size:clamp(17px,2vw,22px);line-height:1.55}
+    .footer{padding:20px 0;background:#090b0f;color:#95a5b2;font-size:13px;text-align:center}
 
     .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
     .reveal.in{opacity:1;transform:translateY(0)}
-    @media(max-width:850px){
-      .links{display:none}.mobile-menu{display:block}
-      .nav.open{height:auto}.nav.open .wrap{align-items:flex-start;padding:17px 0;flex-wrap:wrap}
-      .nav.open .links{display:flex;flex-wrap:wrap;width:100%;gap:13px}
-      .section{padding:95px 0}
-      .mechanism-panel.active,.number-grid,.gap-layout{grid-template-columns:1fr}
+
+    @media(max-width:950px){
+      .links{gap:12px;font-size:12px}
+      .mechanism-panel.active{grid-template-columns:1fr}
       .strategy-grid,.sources{grid-template-columns:1fr}
-      .paper-head{grid-template-columns:1fr;gap:6px}
-      .visual{min-height:310px}
-      .gap-map{grid-template-columns:1fr}
+    }
+    @media(max-width:720px){
+      .links{display:none}
+      .mobile-menu{display:block}
+      .nav.open .wrap{align-items:flex-start;padding:17px 0;flex-wrap:wrap}
+      .nav.open .links{display:flex;flex-wrap:wrap;width:100%;gap:13px}
+      .section{padding:88px 0}
+      .mechanism-panel.active{gap:18px}
+      .scientific-svg{min-height:330px}
+      .paper-head{grid-template-columns:1fr;gap:8px}
+      .layer-card{padding:19px 16px}
     }
   </style>
 </head>
-<body>
 
+<body>
   <header class="nav" id="siteNav">
     <div class="wrap">
-      <a class="brand" href="#top"><span>●</span> Aerosol & Nanotechnology</a>
-      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+      <a class="brand" href="#top"><span>●</span> Aerosol &amp; Nanotechnology</a>
+      <button class="mobile-menu" id="mobileMenu" aria-label="Open menu" type="button">☰</button>
       <nav class="links">
         <a href="#mechanisms">Mechanisms</a>
         <a href="#strategy">Paper pathway</a>
         <a href="#comparison">Comparison</a>
-        <a href="#question">Our question</a>
+        <a href="#design">Proposed design</a>
         <a href="#sources">The papers</a>
         <a href="#verdict">Verdict</a>
       </nav>
@@ -204,13 +246,19 @@
   </header>
 
   <main id="top">
+    <!-- HERO -->
     <section class="hero">
       <div class="grid-bg"></div>
-      <div class="orb a"></div><div class="orb b"></div>
+      <div class="orb a"></div>
+      <div class="orb b"></div>
+
       <div class="wrap hero-content">
-        <div class="kicker">Aerosol & Nanotechnology · Three-Paper Comparison</div>
+        <div class="kicker">Aerosol &amp; Nanotechnology · Three-Paper Comparison</div>
         <h1>Three papers.<br><em>One goal.</em></h1>
-        <p class="lead">Move aerosol filtration beyond passive capture: understand how aerosols land, deactivate what is trapped, and warn the user when the air becomes unsafe.</p>
+        <p class="lead">
+          Move aerosol filtration beyond passive capture: understand how aerosols land,
+          deactivate what is trapped, and warn the user when the air becomes unsafe.
+        </p>
         <div class="paper-row">
           <span class="paper-chip">P1 · Zhang et al. 2018</span>
           <span class="paper-chip">P2 · Li et al. 2021</span>
@@ -220,261 +268,342 @@
       </div>
     </section>
 
+    <!-- SECTION 01 -->
     <section class="section dark" id="mechanisms">
       <div class="wrap">
         <div class="section-tag"><span class="section-no">01</span> Visual mechanisms</div>
         <h2>What each paper actually does</h2>
-        <p class="intro">Before comparing results, see the central idea. Explore each paper and the functional step it adds to aerosol filtration.</p>
+        <p class="intro">
+          Before comparing results, see the central idea. Explore each paper and the
+          functional step it adds to aerosol filtration.
+        </p>
 
         <div class="mechanism-tabs reveal">
-          <div class="tab-buttons" role="tablist">
-            <button class="tab-button active" data-tab="p1">Paper 1 · Capture physics</button>
-            <button class="tab-button" data-tab="p2">Paper 2 · Self-sanitizing mask</button>
-            <button class="tab-button" data-tab="p3">Paper 3 · Smart MOF filter</button>
+          <div class="tab-buttons" role="tablist" aria-label="Paper mechanisms">
+            <button class="tab-button active" data-tab="p1" type="button">Paper 1 · Capture physics</button>
+            <button class="tab-button" data-tab="p2" type="button">Paper 2 · Self-sanitizing mask</button>
+            <button class="tab-button" data-tab="p3" type="button">Paper 3 · Smart MOF filter</button>
           </div>
 
+          <!-- P1 -->
           <div class="mechanism-panel active" id="p1">
             <article class="paper-note">
               <div class="mini">Paper 1 · Zhang et al. 2018</div>
               <h3>How captured aerosols evolve on nanofibers</h3>
-              <p>Wetting droplets can move and coalesce. Non-wetting droplets remain more fixed. Solid particles accumulate as dendritic deposits on the fiber.</p>
-              <div class="formula">Capture is not static: particle–fiber interaction depends on wetting, surface chemistry, and aerosol morphology.</div>
+              <p>
+                Wetting droplets can move and coalesce. Non-wetting droplets remain more fixed.
+                Solid particles accumulate as dendritic deposits on the fiber.
+              </p>
+              <div class="formula">
+                Capture is not static: particle–fiber interaction depends on wetting,
+                surface chemistry, and aerosol morphology.
+              </div>
             </article>
-            <div class="visual">
-              <svg class="scientific-svg" viewBox="0 0 760 430" role="img" aria-label="Scientific diagram of wetting droplets, non-wetting droplets, and solid-particle dendritic deposition on nanofibers">
-                <defs>
-                  <linearGradient id="p1bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#172c38"/><stop offset="1" stop-color="#0e1821"/></linearGradient>
-                  <linearGradient id="wetDrop" x1="0" x2="1"><stop stop-color="#55e6ec"/><stop offset="1" stop-color="#4ba2e7"/></linearGradient>
-                  <linearGradient id="nonWet" x1="0" x2="1"><stop stop-color="#ffd061"/><stop offset="1" stop-color="#ff9d57"/></linearGradient>
-                  <filter id="glow"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                  <marker id="p1arrow" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 z" fill="#62e8df"/></marker>
-                </defs>
-                <rect width="760" height="430" fill="url(#p1bg)"/>
-                <text x="28" y="33" class="small">PAPER 1 · IN SITU NANOSCALE OBSERVATION</text>
-                <line x1="253" y1="65" x2="253" y2="360" stroke="rgba(255,255,255,.15)" stroke-dasharray="5 7"/>
-                <line x1="506" y1="65" x2="506" y2="360" stroke="rgba(255,255,255,.15)" stroke-dasharray="5 7"/>
 
-                <!-- Panel 1 -->
-                <text x="50" y="83" class="label">1 · Wetting droplet</text>
-                <text x="50" y="106" class="caption">small contact angle</text>
-                <path d="M42 250 C97 237 154 247 215 245" class="line"/>
-                <ellipse cx="121" cy="218" rx="47" ry="28" fill="url(#wetDrop)" filter="url(#glow)"/>
-                <path d="M73 247 A52 52 0 0 1 100 204" fill="none" stroke="#e9ffff" stroke-width="2.5"/>
-                <text x="97" y="247" class="caption">θ</text>
-                <path d="M105 177 C127 151 164 152 184 176" fill="none" stroke="#62e8df" stroke-width="2.5" marker-end="url(#p1arrow)"/>
-                <text x="49" y="314" class="small">MOVES + COALESCES</text>
-                <rect x="42" y="329" width="175" height="52" rx="10" fill="#173942" stroke="#3d7883"/>
-                <text x="57" y="351" class="caption">High surface affinity can</text>
-                <text x="57" y="369" class="caption">enable droplet evolution.</text>
+            <svg class="scientific-svg" viewBox="0 0 760 430" role="img" aria-label="Wetting, non-wetting, and solid-particle behavior on nanofibers">
+              <defs>
+                <linearGradient id="p1bg" x1="0" x2="1" y1="0" y2="1">
+                  <stop stop-color="#172c38"/>
+                  <stop offset="1" stop-color="#0e1821"/>
+                </linearGradient>
+                <linearGradient id="wetDrop" x1="0" x2="1">
+                  <stop stop-color="#55e6ec"/>
+                  <stop offset="1" stop-color="#4ba2e7"/>
+                </linearGradient>
+                <linearGradient id="nonWet" x1="0" x2="1">
+                  <stop stop-color="#ffd061"/>
+                  <stop offset="1" stop-color="#ff9d57"/>
+                </linearGradient>
+                <filter id="glow"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <rect width="760" height="430" fill="url(#p1bg)"/>
+              <text x="28" y="33" class="small">PAPER 1 · IN SITU NANOSCALE OBSERVATION</text>
+              <line x1="253" y1="65" x2="253" y2="360" class="darkline" stroke-dasharray="5 7"/>
+              <line x1="506" y1="65" x2="506" y2="360" class="darkline" stroke-dasharray="5 7"/>
 
-                <!-- Panel 2 -->
-                <text x="297" y="83" class="label">2 · Non-wetting droplet</text>
-                <text x="297" y="106" class="caption">large contact angle</text>
-                <path d="M295 250 C350 244 403 245 466 249" class="line"/>
-                <path d="M337 244 C341 188 385 157 424 197 C447 221 441 244 441 244 Z" fill="url(#nonWet)" filter="url(#glow)"/>
-                <path d="M342 246 A65 65 0 0 1 380 191" fill="none" stroke="#fff6df" stroke-width="2.5"/>
-                <text x="374" y="247" class="caption">θ</text>
-                <path d="M435 162 L435 119" stroke="#ffb258" stroke-width="2.5" marker-end="url(#p1arrow)"/>
-                <text x="298" y="314" class="small">PINNED / FIXED SHAPE</text>
-                <rect x="295" y="329" width="175" height="52" rx="10" fill="#3f3021" stroke="#996f38"/>
-                <text x="310" y="351" class="caption">Low wetting limits motion</text>
-                <text x="310" y="369" class="caption">after capture.</text>
+              <text x="28" y="82" class="label">1 · Wetting droplet</text>
+              <text x="28" y="106" class="caption">small contact angle θ</text>
+              <path d="M28 248 C98 244 169 246 228 250" class="line"/>
+              <path d="M74 245 C90 177 151 177 169 245Z" fill="url(#wetDrop)" filter="url(#glow)"/>
+              <path d="M177 213 H223" class="arrow"/>
+              <text x="34" y="315" class="small">MOVES + COALESCES</text>
+              <text x="32" y="350" class="caption">High surface affinity can enable</text>
+              <text x="32" y="370" class="caption">droplet evolution.</text>
 
-                <!-- Panel 3 -->
-                <text x="548" y="83" class="label">3 · Solid particle</text>
-                <text x="548" y="106" class="caption">dendritic loading</text>
-                <path d="M548 250 C608 245 671 246 724 250" class="line"/>
-                <g stroke="#c79cff" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
-                  <line x1="634" y1="220" x2="634" y2="151"/><line x1="634" y1="220" x2="681" y2="178"/>
-                  <line x1="634" y1="220" x2="691" y2="231"/><line x1="634" y1="220" x2="666" y2="275"/>
-                  <line x1="634" y1="220" x2="592" y2="278"/><line x1="634" y1="220" x2="577" y2="195"/>
-                </g>
-                <g fill="#d9c3ff" filter="url(#glow)">
-                  <circle cx="634" cy="220" r="11"/><circle cx="634" cy="151" r="8"/><circle cx="681" cy="178" r="8"/>
-                  <circle cx="691" cy="231" r="8"/><circle cx="666" cy="275" r="8"/><circle cx="592" cy="278" r="8"/><circle cx="577" cy="195" r="8"/>
-                </g>
-                <text x="548" y="314" class="small">FIXED + DENDRITIC GROWTH</text>
-                <rect x="548" y="329" width="175" height="52" rx="10" fill="#332743" stroke="#8f6abe"/>
-                <text x="563" y="351" class="caption">Solid loading develops</text>
-                <text x="563" y="369" class="caption">a branched deposit.</text>
-              </svg>
-            </div>
+              <text x="282" y="82" class="label">2 · Non-wetting droplet</text>
+              <text x="282" y="106" class="caption">large contact angle θ</text>
+              <path d="M282 248 C352 244 422 246 481 250" class="line"/>
+              <path d="M342 245 C348 172 416 172 423 245Z" fill="url(#nonWet)" filter="url(#glow)"/>
+              <text x="290" y="315" class="small">PINNED / FIXED SHAPE</text>
+              <text x="287" y="350" class="caption">Low wetting limits motion</text>
+              <text x="287" y="370" class="caption">after capture.</text>
+
+              <text x="536" y="82" class="label">3 · Solid particle</text>
+              <text x="536" y="106" class="caption">dendritic loading</text>
+              <path d="M536 250 C606 246 676 246 732 250" class="line"/>
+              <g stroke="#c79cff" stroke-width="3" stroke-linecap="round" filter="url(#glow)">
+                <line x1="634" y1="220" x2="634" y2="151"/>
+                <line x1="634" y1="220" x2="681" y2="178"/>
+                <line x1="634" y1="220" x2="691" y2="231"/>
+                <line x1="634" y1="220" x2="666" y2="275"/>
+                <line x1="634" y1="220" x2="592" y2="278"/>
+                <line x1="634" y1="220" x2="577" y2="195"/>
+              </g>
+              <g fill="#d9c3ff" filter="url(#glow)">
+                <circle cx="634" cy="220" r="11"/><circle cx="634" cy="151" r="8"/>
+                <circle cx="681" cy="178" r="8"/><circle cx="691" cy="231" r="8"/>
+                <circle cx="666" cy="275" r="8"/><circle cx="592" cy="278" r="8"/>
+                <circle cx="577" cy="195" r="8"/>
+              </g>
+              <text x="538" y="315" class="small">FIXED + DENDRITIC GROWTH</text>
+              <text x="538" y="350" class="caption">Solid loading develops</text>
+              <text x="538" y="370" class="caption">a branched deposit.</text>
+            </svg>
           </div>
 
+          <!-- P2 -->
           <div class="mechanism-panel" id="p2">
             <article class="paper-note">
               <div class="mini">Paper 2 · Li et al. 2021</div>
               <h3>Light-triggered self-sanitization</h3>
-              <p>An electrospun biodegradable mask carries N-TiO₂/TiO₂. Under light, photocatalysis produces reactive oxygen species that disinfect captured bacteria.</p>
+              <p>
+                An electrospun biodegradable mask carries N-TiO₂/TiO₂. Under light,
+                photocatalysis produces reactive oxygen species that disinfect captured bacteria.
+              </p>
               <div class="formula">TiO₂ + light → reactive oxygen species → microbial disinfection</div>
             </article>
-            <div class="visual">
-              <svg class="scientific-svg" viewBox="0 0 760 430" role="img" aria-label="Scientific diagram of light activated photocatalytic self-sanitization in a nanofiber mask">
-                <defs>
-                  <linearGradient id="p2bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#1b2c36"/><stop offset="1" stop-color="#131c22"/></linearGradient>
-                  <filter id="p2glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                  <marker id="p2arrow" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 z" fill="#ffd267"/></marker>
-                </defs>
-                <rect width="760" height="430" fill="url(#p2bg)"/>
-                <text x="28" y="33" class="small">PAPER 2 · PHOTOCATALYTIC REJUVENATION</text>
 
-                <!-- Sun and photon arrows -->
-                <circle cx="109" cy="124" r="43" fill="#ffd267" filter="url(#p2glow)"/>
-                <g stroke="#ffe59b" stroke-width="4" stroke-linecap="round">
-                  <line x1="109" y1="58" x2="109" y2="40"/><line x1="158" y1="76" x2="173" y2="61"/><line x1="61" y1="76" x2="46" y2="61"/>
-                  <line x1="171" y1="124" x2="190" y2="124"/><line x1="47" y1="124" x2="28" y2="124"/>
+            <svg class="scientific-svg" viewBox="0 0 760 430" role="img" aria-label="Photocatalytic self-sanitizing electrospun mask">
+              <defs>
+                <linearGradient id="p2bg" x1="0" x2="1" y1="0" y2="1">
+                  <stop stop-color="#172c38"/>
+                  <stop offset="1" stop-color="#0e1821"/>
+                </linearGradient>
+                <filter id="p2glow"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <rect width="760" height="430" fill="url(#p2bg)"/>
+              <text x="28" y="33" class="small">PAPER 2 · PHOTOCATALYTIC REJUVENATION</text>
+
+              <g transform="translate(88 82)" filter="url(#p2glow)">
+                <circle cx="48" cy="48" r="38" fill="#ffd061"/>
+                <g stroke="#ffd061" stroke-width="5" stroke-linecap="round">
+                  <line x1="48" y1="-10" x2="48" y2="-30"/><line x1="48" y1="106" x2="48" y2="126"/>
+                  <line x1="-10" y1="48" x2="-30" y2="48"/><line x1="106" y1="48" x2="126" y2="48"/>
+                  <line x1="7" y1="7" x2="-8" y2="-8"/><line x1="89" y1="89" x2="104" y2="104"/>
+                  <line x1="89" y1="7" x2="104" y2="-8"/><line x1="7" y1="89" x2="-8" y2="104"/>
                 </g>
-                <text x="66" y="192" class="label">Visible / solar light</text>
-                <path d="M167 152 C237 153 269 184 319 220" fill="none" stroke="#ffd267" stroke-width="3.2" stroke-dasharray="7 7" marker-end="url(#p2arrow)"/>
-                <text x="220" y="154" class="small">hν</text>
+              </g>
+              <text x="72" y="228" class="label">Visible / solar light hν</text>
 
-                <!-- Filter -->
-                <rect x="246" y="166" width="291" height="132" rx="45" fill="#17343b" stroke="#b6f3ec" stroke-width="3"/>
-                <path d="M271 200 H512 M271 222 H512 M271 244 H512 M271 266 H512" stroke="#65e4dc" stroke-width="4" opacity=".8"/>
-                <text x="293" y="329" class="label">Electrospun PVA/PEO/CNF scaffold</text>
-                <text x="322" y="350" class="caption">N-TiO₂ / TiO₂ coating on nanofibers</text>
-
-                <!-- TiO2 nanoparticles -->
+              <path d="M210 210 H305" class="arrow"/>
+              <g transform="translate(282 120)">
+                <rect x="0" y="62" width="250" height="90" rx="28" fill="rgba(98,232,223,.11)" stroke="#c8f6f1" stroke-width="3"/>
+                <g stroke="#7adbd5" stroke-width="3" opacity=".88">
+                  <line x1="22" y1="80" x2="220" y2="135"/>
+                  <line x1="30" y1="145" x2="232" y2="89"/>
+                  <line x1="55" y1="73" x2="190" y2="145"/>
+                  <line x1="68" y1="147" x2="205" y2="75"/>
+                </g>
                 <g fill="#baf477" stroke="#e5ffbe" stroke-width="1.5" filter="url(#p2glow)">
-                  <circle cx="311" cy="203" r="8"/><circle cx="360" cy="225" r="8"/><circle cx="414" cy="201" r="8"/><circle cx="472" cy="247" r="8"/>
-                  <circle cx="330" cy="268" r="8"/><circle cx="444" cy="267" r="8"/>
+                  <circle cx="40" cy="96" r="8"/><circle cx="85" cy="120" r="8"/><circle cx="132" cy="98" r="8"/>
+                  <circle cx="182" cy="120" r="8"/><circle cx="215" cy="96" r="8"/>
                 </g>
-                <text x="466" y="191" class="caption">TiO₂</text>
+              </g>
+              <text x="292" y="315" class="label">Electrospun PVA/PEO/CNF scaffold</text>
+              <text x="340" y="339" class="caption">N-TiO₂ / TiO₂ coating on nanofibers</text>
 
-                <!-- ROS flow -->
-                <path d="M543 232 C583 216 613 212 660 211" fill="none" stroke="#ff8fa1" stroke-width="3.2" stroke-dasharray="6 6"/>
-                <text x="562" y="184" class="label" fill="#ffb1bc">ROS</text>
-                <text x="563" y="204" class="caption">•OH · O₂⁻</text>
-                <g fill="#ff8598" filter="url(#p2glow)">
-                  <circle cx="612" cy="220" r="7"/><circle cx="634" cy="202" r="6"/><circle cx="646" cy="232" r="6"/>
+              <path d="M545 215 H640" class="arrow2"/>
+              <text x="562" y="185" class="label" fill="#ffb1bc">ROS</text>
+              <text x="563" y="206" class="caption">•OH · O₂⁻</text>
+              <g fill="#ff8598" filter="url(#p2glow)">
+                <circle cx="610" cy="220" r="7"/><circle cx="635" cy="204" r="6"/><circle cx="652" cy="234" r="6"/>
+              </g>
+              <g transform="translate(638 270)">
+                <g stroke="#f6c4c5" stroke-width="3" fill="#ff8598">
+                  <ellipse cx="25" cy="17" rx="24" ry="13"/>
+                  <line x1="0" y1="6" x2="-13" y2="-4"/><line x1="4" y1="25" x2="-10" y2="34"/>
+                  <line x1="45" y1="8" x2="59" y2="-4"/><line x1="45" y1="25" x2="58" y2="35"/>
                 </g>
-
-                <!-- Bacteria and inactive state -->
-                <g transform="translate(635 270)">
-                  <g stroke="#f6c4c5" stroke-width="3" fill="#ff8598">
-                    <ellipse cx="25" cy="17" rx="24" ry="13"/><line x1="0" y1="6" x2="-13" y2="-4"/><line x1="4" y1="25" x2="-10" y2="34"/>
-                    <line x1="45" y1="8" x2="59" y2="-4"/><line x1="45" y1="25" x2="58" y2="35"/>
-                  </g>
-                  <line x1="-8" y1="-7" x2="58" y2="42" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
-                </g>
-                <text x="583" y="364" class="small">CAPTURED BACTERIA → INACTIVATED</text>
-              </svg>
-            </div>
+                <line x1="-8" y1="-7" x2="58" y2="42" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+              </g>
+              <text x="560" y="365" class="small">CAPTURED BACTERIA → INACTIVATED</text>
+            </svg>
           </div>
 
+          <!-- P3 -->
           <div class="mechanism-panel" id="p3">
             <article class="paper-note">
               <div class="mini">Paper 3 · Lee et al. 2023</div>
               <h3>One membrane: filtration, adsorption, and sensing</h3>
-              <p>A PAN nanofiber/nanonet captures fine particles. UiO-66-NH₂ MOF removes acetaldehyde. Bromocresol purple gives a rapid visible ammonia warning.</p>
-              <div class="formula">Nanofiber web → PM capture &nbsp; | &nbsp; MOF mesh → VOC adsorption &nbsp; | &nbsp; dye → NH₃ signal</div>
+              <p>
+                A PAN nanofiber/nanonet captures fine particles. UiO-66-NH₂ MOF removes
+                acetaldehyde. Bromocresol purple gives a rapid visible ammonia warning.
+              </p>
+              <div class="formula">
+                Nanofiber web → PM capture &nbsp;|&nbsp; MOF mesh → VOC adsorption
+                &nbsp;|&nbsp; dye → NH₃ signal
+              </div>
             </article>
-            <div class="visual">
-              <svg class="scientific-svg" viewBox="0 0 760 430" role="img" aria-label="Scientific diagram of a multilayer filter for PM capture, VOC adsorption and visible ammonia sensing">
-                <defs>
-                  <linearGradient id="p3bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#172333"/><stop offset="1" stop-color="#101923"/></linearGradient>
-                  <filter id="p3glow"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                  <marker id="p3arrow" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto"><path d="M0,0 L8,3.5 L0,7 z" fill="#9ad9ff"/></marker>
-                </defs>
-                <rect width="760" height="430" fill="url(#p3bg)"/>
-                <text x="28" y="33" class="small">PAPER 3 · MULTI-FUNCTIONAL NANOFIBER + MOF PLATFORM</text>
 
-                <!-- Incoming particles / gases -->
-                <text x="44" y="89" class="label">Contaminated air</text>
-                <path d="M40 146 H126" stroke="#9ad9ff" stroke-width="3" marker-end="url(#p3arrow)"/>
-                <g fill="#9ad9ff" filter="url(#p3glow)">
-                  <circle cx="62" cy="129" r="8"/><circle cx="93" cy="166" r="5"/><circle cx="112" cy="116" r="7"/>
+            <svg class="scientific-svg" viewBox="0 0 760 430" role="img" aria-label="Multifunctional nanofiber and MOF filter platform">
+              <defs>
+                <linearGradient id="p3bg" x1="0" x2="1" y1="0" y2="1">
+                  <stop stop-color="#172c38"/>
+                  <stop offset="1" stop-color="#0e1821"/>
+                </linearGradient>
+                <filter id="p3glow"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              </defs>
+              <rect width="760" height="430" fill="url(#p3bg)"/>
+              <text x="28" y="33" class="small">PAPER 3 · MULTI-FUNCTIONAL NANOFIBER + MOF PLATFORM</text>
+              <text x="28" y="88" class="label">Contaminated air</text>
+              <text x="28" y="111" class="caption">PM2.5 / ultrafine particles</text>
+              <text x="28" y="131" class="caption">CH₃CHO + NH₃</text>
+              <path d="M116 194 H176" class="arrow"/>
+              <g transform="translate(160 105)">
+                <rect x="0" y="55" width="120" height="150" rx="18" fill="rgba(118,168,255,.12)" stroke="#9ad9ff" stroke-width="2"/>
+                <g stroke="#8fd6ff" stroke-width="2.5" opacity=".82">
+                  <line x1="15" y1="75" x2="104" y2="170"/>
+                  <line x1="15" y1="170" x2="104" y2="75"/>
+                  <line x1="40" y1="60" x2="93" y2="190"/>
+                  <line x1="23" y1="132" x2="110" y2="118"/>
                 </g>
-                <text x="40" y="194" class="caption">PM2.5 / ultrafine particles</text>
-                <g fill="#ffb258"><circle cx="67" cy="231" r="5"/><circle cx="91" cy="247" r="5"/><circle cx="112" cy="227" r="5"/></g>
-                <text x="40" y="269" class="caption">CH₃CHO + NH₃</text>
+                <g fill="#d8f0f0"><circle cx="20" cy="78" r="7"/><circle cx="85" cy="95" r="6"/><circle cx="50" cy="145" r="7"/></g>
+              </g>
+              <text x="148" y="337" class="label">PAN nanofiber/</text>
+              <text x="152" y="360" class="label">nanonet</text>
+              <text x="171" y="385" class="caption">PM CAPTURE</text>
 
-                <!-- Layer 1 -->
-                <rect x="146" y="88" width="144" height="255" rx="17" fill="#183347" stroke="#78bffd" stroke-width="2"/>
-                <text x="165" y="116" class="label">PAN nanofiber</text><text x="182" y="136" class="caption">/ nanonet</text>
-                <g stroke="#91d7ff" stroke-width="3" opacity=".8">
-                  <line x1="169" y1="165" x2="265" y2="203"/><line x1="169" y1="195" x2="265" y2="233"/><line x1="169" y1="226" x2="265" y2="264"/><line x1="169" y1="256" x2="265" y2="294"/>
-                  <line x1="169" y1="203" x2="265" y2="165"/><line x1="169" y1="233" x2="265" y2="195"/><line x1="169" y1="264" x2="265" y2="226"/>
+              <path d="M300 215 H355" class="arrow"/>
+              <g transform="translate(350 108)">
+                <rect x="0" y="50" width="130" height="150" rx="18" fill="rgba(186,244,119,.08)" stroke="#baf477" stroke-width="2"/>
+                <g fill="none" stroke="#baf477" stroke-width="2" opacity=".9">
+                  <rect x="33" y="83" width="65" height="65" transform="rotate(45 65 115)"/>
+                  <line x1="65" y1="65" x2="65" y2="165"/>
+                  <line x1="15" y1="115" x2="115" y2="115"/>
                 </g>
-                <circle cx="144" cy="174" r="8" fill="#9ad9ff"/><line x1="132" y1="162" x2="155" y2="185" stroke="#ff8598" stroke-width="4"/>
-                <text x="167" y="321" class="small">PM CAPTURE</text>
+              </g>
+              <text x="355" y="337" class="label">UiO-66-NH₂</text>
+              <text x="365" y="360" class="label">MOF mesh</text>
+              <text x="358" y="385" class="caption">CH₃CHO ADSORPTION</text>
 
-                <!-- Layer 2 -->
-                <rect x="314" y="88" width="144" height="255" rx="17" fill="#2c3a28" stroke="#baf477" stroke-width="2"/>
-                <text x="344" y="116" class="label">UiO-66-NH₂</text><text x="353" y="136" class="caption">MOF mesh</text>
-                <g stroke="#d6ffa8" stroke-width="2.4" fill="none" opacity=".9">
-                  <path d="M352 175 l18 -17 20 8 0 23 -20 9 -18 -17z"/><path d="M397 202 l18 -17 20 8 0 23 -20 9 -18 -17z"/><path d="M345 249 l18 -17 20 8 0 23 -20 9 -18 -17z"/>
-                </g>
-                <g fill="#ffb258" filter="url(#p3glow)"><circle cx="365" cy="178" r="5"/><circle cx="412" cy="224" r="5"/><circle cx="358" cy="270" r="5"/></g>
-                <text x="339" y="321" class="small">CH₃CHO ADSORPTION</text>
-
-                <!-- Layer 3 / sensor -->
-                <rect x="482" y="88" width="210" height="255" rx="17" fill="#392746" stroke="#c79cff" stroke-width="2"/>
-                <text x="514" y="116" class="label">BCP sensor zone</text><text x="527" y="136" class="caption">NH₃ color signal</text>
-                <rect x="517" y="171" width="63" height="82" rx="12" fill="#f2d94d"/>
-                <rect x="594" y="171" width="63" height="82" rx="12" fill="#8d5cda"/>
-                <path d="M580 212 H594" stroke="#f6eaff" stroke-width="3" marker-end="url(#p3arrow)"/>
-                <text x="522" y="276" class="caption">baseline</text><text x="598" y="276" class="caption">+ NH₃</text>
-                <text x="505" y="321" class="small">VISIBLE WARNING</text>
-
-                <path d="M292 215 H313 M459 215 H481" stroke="#9ad9ff" stroke-width="3" stroke-dasharray="7 7" marker-end="url(#p3arrow)"/>
-                <text x="138" y="386" class="caption">One membrane, three functions: capture → adsorption → user-visible sensing.</text>
-              </svg>
-            </div>
+              <path d="M490 215 H528" class="arrow"/>
+              <g transform="translate(530 106)">
+                <rect x="0" y="54" width="190" height="148" rx="18" fill="rgba(199,156,255,.08)" stroke="#c79cff" stroke-width="2"/>
+                <text x="17" y="34" class="label">BCP sensor zone</text>
+                <text x="26" y="227" class="caption">NH₃ color signal</text>
+                <rect x="25" y="80" width="55" height="65" rx="10" fill="#f2d94d"/>
+                <rect x="111" y="80" width="55" height="65" rx="10" fill="#8d5cda"/>
+                <path d="M80 112 H111" stroke="#f6eaff" stroke-width="3"/>
+                <text x="20" y="170" class="caption">baseline</text>
+                <text x="117" y="170" class="caption">+ NH₃</text>
+              </g>
+              <text x="555" y="385" class="small">VISIBLE WARNING</text>
+              <text x="145" y="414" class="caption">One membrane, three functions: capture → adsorption → user-visible sensing.</text>
+            </svg>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- SECTION 02 -->
     <section class="section light" id="strategy">
       <div class="wrap">
         <div class="section-tag"><span class="section-no">02</span> The research pathway</div>
         <h2>Every paper solves one part of the same problem</h2>
-        <p class="intro">Read them as a sequence, not three unrelated articles: mechanism first, practical protection second, intelligent functionality third.</p>
+        <p class="intro">
+          Read them as a sequence, not three unrelated articles: mechanism first,
+          practical protection second, intelligent functionality third.
+        </p>
 
         <div class="strategy-grid reveal">
           <article class="strategy">
             <div class="n">STEP 01</div>
             <h3>Understand capture</h3>
-            <p><strong>P1</strong> makes filtration observable at the nanoscale. It shows why surface chemistry and wetting can change particle loading after capture.</p>
+            <p>P1 makes filtration observable at the nanoscale. It shows why surface chemistry and wetting can change particle loading after capture.</p>
           </article>
           <article class="strategy">
             <div class="n">STEP 02</div>
             <h3>Deactivate what is trapped</h3>
-            <p><strong>P2</strong> responds to the hygiene problem: a filter that collects biological contamination should also be cleanable and reusable.</p>
+            <p>P2 responds to the hygiene problem: a filter that collects biological contamination should also be cleanable and reusable.</p>
           </article>
           <article class="strategy">
             <div class="n">STEP 03</div>
             <h3>Make the filter informative</h3>
-            <p><strong>P3</strong> adds VOC removal and a human-readable chemical warning, turning a barrier into a responsive device.</p>
+            <p>P3 adds VOC removal and a human-readable chemical warning, turning a barrier into a responsive device.</p>
           </article>
         </div>
 
         <div class="paper-accordion reveal">
           <article class="paper-block">
-            <div class="paper-head"><div class="paper-badge">Paper 1</div><div><h3>Capture physics on polyimide nanofibers</h3><p>Mechanistic foundation · Nano Letters</p></div></div>
-            <details><summary>What problem does it solve?</summary><p>Filtration is often treated as a black box: particles arrive and are counted before and after the filter. This work directly investigates how wetting droplets, non-wetting droplets, and solid particles behave after touching a nanofiber.</p></details>
-            <details><summary>What is the useful design lesson?</summary><p>Filter performance is influenced by more than pore size. Fiber chemistry and the type of aerosol can determine whether droplets spread, merge, remain fixed, or form deposits.</p></details>
-            <details><summary>What does it leave open?</summary><p>It explains capture but does not disinfect the collected material, adsorb gases, or tell a user when the filter is risky to use.</p></details>
+            <div class="paper-head">
+              <div class="paper-badge">Paper 1</div>
+              <div>
+                <h3>Capture physics on polyimide nanofibers</h3>
+                <p>Mechanistic foundation · Nano Letters</p>
+              </div>
+            </div>
+            <details>
+              <summary>What problem does it solve?</summary>
+              <p>Filtration is often treated as a black box: particles arrive and are counted before and after the filter. This work directly investigates how wetting droplets, non-wetting droplets, and solid particles behave after touching a nanofiber.</p>
+            </details>
+            <details>
+              <summary>What is the useful design lesson?</summary>
+              <p>Filter performance is influenced by more than pore size. Fiber chemistry and the type of aerosol can determine whether droplets spread, merge, remain fixed, or form deposits.</p>
+            </details>
+            <details>
+              <summary>What does it leave open?</summary>
+              <p>It explains capture but does not disinfect the collected material, adsorb gases, or tell a user when the filter is risky to use.</p>
+            </details>
           </article>
 
           <article class="paper-block">
-            <div class="paper-head"><div class="paper-badge">Paper 2</div><div><h3>A reusable self-sanitizing biodegradable mask</h3><p>Practical protection · ACS Nano</p></div></div>
-            <details><summary>What problem does it solve?</summary><p>Disposable masks can accumulate microbial contamination and create waste. The paper tests whether a photocatalytic nanofiber mask can be disinfected with light while maintaining filtration and breathability.</p></details>
-            <details><summary>What is the useful design lesson?</summary><p>Functional coatings can give a filter a regeneration step, so the material is not simply discarded after it captures microbes.</p></details>
-            <details><summary>What does it leave open?</summary><p>The system does not provide real-time chemical exposure feedback, gas adsorption, or a visible warning about saturation.</p></details>
+            <div class="paper-head">
+              <div class="paper-badge">Paper 2</div>
+              <div>
+                <h3>A reusable self-sanitizing biodegradable mask</h3>
+                <p>Practical protection · ACS Nano</p>
+              </div>
+            </div>
+            <details>
+              <summary>What problem does it solve?</summary>
+              <p>Disposable masks can accumulate microbial contamination and create waste. The paper tests whether a photocatalytic nanofiber mask can be disinfected with light while maintaining filtration and breathability.</p>
+            </details>
+            <details>
+              <summary>What is the useful design lesson?</summary>
+              <p>Functional coatings can give a filter a regeneration step, so the material is not simply discarded after it captures microbes.</p>
+            </details>
+            <details>
+              <summary>What does it leave open?</summary>
+              <p>The system does not provide real-time chemical exposure feedback, gas adsorption, or a visible warning about saturation.</p>
+            </details>
           </article>
 
           <article class="paper-block">
-            <div class="paper-head"><div class="paper-badge">Paper 3</div><div><h3>A multi-scale MOF-functionalized smart membrane</h3><p>Intelligent air treatment · Chemical Engineering Journal</p></div></div>
-            <details><summary>What problem does it solve?</summary><p>Fine particles and hazardous gases can be present at the same time. The membrane combines particulate filtration, acetaldehyde adsorption, and a rapid colorimetric ammonia signal.</p></details>
-            <details><summary>What is the useful design lesson?</summary><p>Different layers can be assigned different jobs: nanofibers for capture, MOFs for selective gas adsorption, and dyes for an immediate visible response.</p></details>
-            <details><summary>What does it leave open?</summary><p>The platform is multifunctional but does not integrate photocatalytic self-sanitization or a biodegradable substrate.</p></details>
+            <div class="paper-head">
+              <div class="paper-badge">Paper 3</div>
+              <div>
+                <h3>A multi-scale MOF-functionalized smart membrane</h3>
+                <p>Intelligent air treatment · Chemical Engineering Journal</p>
+              </div>
+            </div>
+            <details>
+              <summary>What problem does it solve?</summary>
+              <p>Fine particles and hazardous gases can be present at the same time. The membrane combines particulate filtration, acetaldehyde adsorption, and a rapid colorimetric ammonia signal.</p>
+            </details>
+            <details>
+              <summary>What is the useful design lesson?</summary>
+              <p>Different layers can be assigned different jobs: nanofibers for capture, MOFs for selective gas adsorption, and dyes for an immediate visible response.</p>
+            </details>
+            <details>
+              <summary>What does it leave open?</summary>
+              <p>The platform is multifunctional but does not integrate photocatalytic self-sanitization or a biodegradable substrate.</p>
+            </details>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- SECTION 03 -->
     <section class="section tint" id="comparison">
       <div class="wrap">
         <div class="section-tag"><span class="section-no">03</span> Side by side</div>
@@ -482,15 +611,22 @@
         <p class="intro">Click Next to reveal each criterion. This makes the research gap visible instead of simply listing it.</p>
 
         <div class="comparison-controls reveal">
-          <button class="btn primary" id="nextRow">Next row →</button>
-          <button class="btn" id="showRows">Show all</button>
-          <button class="btn" id="resetRows">Reset</button>
-          <span class="progress"><span id="rowCount">0</span> / 6 rows shown</span>
+          <button class="btn primary" id="nextRow" type="button">Next row →</button>
+          <button class="btn" id="showRows" type="button">Show all</button>
+          <button class="btn" id="resetRows" type="button">Reset</button>
+          <span class="row-count" id="rowCount">0 / 6 rows shown</span>
         </div>
 
-        <div class="comparison reveal">
+        <div class="table-wrap reveal">
           <table>
-            <thead><tr><th>Criterion</th><th>P1 · Zhang 2018</th><th>P2 · Li 2021</th><th>P3 · Lee 2023</th></tr></thead>
+            <thead>
+              <tr>
+                <th>Criterion</th>
+                <th>P1 · Zhang 2018</th>
+                <th>P2 · Li 2021</th>
+                <th>P3 · Lee 2023</th>
+              </tr>
+            </thead>
             <tbody>
               <tr class="hidden-row"><td>Aerosol target</td><td>Wetting droplets, non-wetting droplets, solid particles</td><td>Particles + microbial contamination</td><td>PM2.5, sub-120 nm aerosols, CH₃CHO, NH₃</td></tr>
               <tr class="hidden-row"><td>Material design</td><td>Polyimide nanofibers</td><td>PVA/PEO/cellulose nanofiber mask + N-TiO₂/TiO₂</td><td>PAN nanofiber/nanonet + dye + UiO-66-NH₂ MOF</td></tr>
@@ -504,85 +640,139 @@
       </div>
     </section>
 
-    <section class="section light" id="question">
+    <!-- SECTION 04: REPLACED WITH PROPOSED LAYERED DESIGN -->
+    <section class="section design-section" id="design">
       <div class="wrap">
-        <div class="section-tag"><span class="section-no">04</span> The question developed from the gaps</div>
-        <div class="gap-layout reveal">
-          <div class="quote">Could one filter combine <mark>capture physics, self-sanitization, VOC removal, and user-visible warning</mark> in a biodegradable layered nanofiber platform?</div>
-          <div class="gap-map">
-            <article class="gap-card"><b>From P1</b><p>Use nanoscale capture behavior to select fiber chemistry and morphology that manage particle loading.</p></article>
-            <article class="gap-card"><b>From P2</b><p>Add a visible-light photocatalytic layer so captured microbial contamination can be deactivated.</p></article>
-            <article class="gap-card"><b>From P3</b><p>Use MOFs for VOC adsorption and a colorimetric zone for fast exposure feedback.</p></article>
-            <article class="gap-card"><b>Research gap</b><p>Join these functions without making the filter too dense, unsafe, difficult to regenerate, or non-sustainable.</p></article>
-          </div>
+        <div class="section-tag"><span class="section-no">04</span> Proposed layered design</div>
+        <h2 style="color:#0c326e">Proposed layered design</h2>
+        <p class="layered-subtitle">
+          P1 gives the capture-design logic; P2 contributes self-sanitization;
+          P3 contributes sensing and gas removal.
+        </p>
+
+        <div class="layer-stack reveal">
+          <article class="layer-card">
+            <h3>Layer 1:</h3>
+            <p>Biodegradable electrospun nanofiber scaffold - mechanical support + aerosol capture</p>
+          </article>
+
+          <article class="layer-card">
+            <h3>Layer 2:</h3>
+            <p>Photocatalytic visible-light coating - self-sanitization + regeneration</p>
+          </article>
+
+          <article class="layer-card">
+            <h3>Layer 3:</h3>
+            <p>MOF-loaded mesh/interlayer - VOC adsorption + chemical selectivity</p>
+          </article>
+
+          <article class="layer-card">
+            <h3>Layer 4:</h3>
+            <p>Colorimetric dye/sensor zone - user-visible warning + saturation indication</p>
+          </article>
+        </div>
+
+        <div class="design-note">
+          <strong>Design logic:</strong> each layer performs a defined task, combining capture,
+          regeneration, gas selectivity, and visible feedback in one proposed smart aerosol-filter platform.
         </div>
       </div>
     </section>
 
+    <!-- SECTION 05 -->
     <section class="section dark" id="sources">
       <div class="wrap">
         <div class="section-tag"><span class="section-no">05</span> The source papers</div>
         <h2>Three papers. One connected research idea.</h2>
         <p class="intro">Everything in this presentation traces back to these published studies.</p>
+
         <div class="sources reveal">
-          <article class="source-card"><div class="year">PAPER 1 · 2018</div><h3>In situ investigation on the nanoscale capture and evolution of aerosols on nanofibers</h3><p>Zhang, R., Liu, B., Yang, A., Zhu, Y., Liu, C., Zhou, G., … & Cui, Y. <em>Nano Letters</em>, 18(2), 1130–1138.</p></article>
-          <article class="source-card"><div class="year">PAPER 2 · 2021</div><h3>Photocatalytic rejuvenation enabled self-sanitizing, reusable, and biodegradable masks</h3><p>Li, Q., Yin, Y., Cao, D., Wang, Y., Luan, P., Sun, X., … & Zhu, H. <em>ACS Nano</em>, 15(7), 11992–12005.</p></article>
-          <article class="source-card"><div class="year">PAPER 3 · 2023</div><h3>Multi-scale nanofiber membrane functionalized with MOFs for PM2.5 and CH₃CHO filtration with NH₃ detection</h3><p>Lee, J. H., Oh, H. J., Park, Y. K., Kim, Y., Lee, G., Doh, S. J., … & Yoon, K. R. <em>Chemical Engineering Journal</em>, 464, 142725.</p></article>
+          <article class="source-card">
+            <div class="year">PAPER 1 · 2018</div>
+            <h3>In situ investigation on the nanoscale capture and evolution of aerosols on nanofibers</h3>
+            <p>Zhang, R., Liu, B., Yang, A., Zhu, Y., Liu, C., Zhou, G., … &amp; Cui, Y. <em>Nano Letters</em>, 18(2), 1130–1138.</p>
+          </article>
+
+          <article class="source-card">
+            <div class="year">PAPER 2 · 2021</div>
+            <h3>Photocatalytic rejuvenation enabled self-sanitizing, reusable, and biodegradable masks</h3>
+            <p>Li, Q., Yin, Y., Cao, D., Wang, Y., Luan, P., Sun, X., … &amp; Zhu, H. <em>ACS Nano</em>, 15(7), 11992–12005.</p>
+          </article>
+
+          <article class="source-card">
+            <div class="year">PAPER 3 · 2023</div>
+            <h3>Multi-scale nanofiber membrane functionalized with MOFs for PM2.5 and CH₃CHO filtration with NH₃ detection</h3>
+            <p>Lee, J. H., Oh, H. J., Park, Y. K., Kim, Y., Lee, G., Doh, S. J., … &amp; Yoon, K. R. <em>Chemical Engineering Journal</em>, 464, 142725.</p>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- SECTION 06 -->
     <section class="verdict" id="verdict">
       <div class="wrap reveal">
         <div class="section-tag" style="justify-content:center"><span class="section-no">06</span> Final verdict</div>
         <h2>Filters should not only trap aerosols. They should respond to them.</h2>
-        <p>P1 explains how capture works. P2 makes capture safer through self-sanitization. P3 makes filtration smarter through sensing and gas removal. Together, they motivate a next-generation sustainable aerosol nanofilter.</p>
+        <p>
+          P1 explains how capture works. P2 makes capture safer through self-sanitization.
+          P3 makes filtration smarter through sensing and gas removal. Together, they motivate
+          a next-generation sustainable aerosol nanofilter.
+        </p>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="wrap">Aerosol & Nanotechnology · Three-Paper Research Story · Replace this line with your name before final submission.</div>
+    <div class="wrap">Aerosol &amp; Nanotechnology · Three-Paper Research Story</div>
   </footer>
 
   <script>
     // Mobile navigation
     const menu = document.getElementById('mobileMenu');
     const siteNav = document.getElementById('siteNav');
-    menu.addEventListener('click', () => siteNav.classList.toggle('open'));
-    document.querySelectorAll('.links a').forEach(a => a.addEventListener('click', () => siteNav.classList.remove('open')));
 
-    // Interactive paper-mechanism tabs
-    const buttons = document.querySelectorAll('.tab-button');
+    menu.addEventListener('click', () => siteNav.classList.toggle('open'));
+    document.querySelectorAll('.links a').forEach(link => {
+      link.addEventListener('click', () => siteNav.classList.remove('open'));
+    });
+
+    // Mechanism tabs
+    const tabButtons = document.querySelectorAll('.tab-button');
     const panels = document.querySelectorAll('.mechanism-panel');
-    buttons.forEach(button => {
+
+    tabButtons.forEach(button => {
       button.addEventListener('click', () => {
-        buttons.forEach(b => b.classList.remove('active'));
-        panels.forEach(p => p.classList.remove('active'));
+        tabButtons.forEach(item => item.classList.remove('active'));
+        panels.forEach(panel => panel.classList.remove('active'));
         button.classList.add('active');
         document.getElementById(button.dataset.tab).classList.add('active');
       });
     });
 
-    // Comparison row reveal
-    const rows = [...document.querySelectorAll('.hidden-row')];
+    // Comparison-table reveal
+    const rows = Array.from(document.querySelectorAll('.hidden-row'));
     const rowCount = document.getElementById('rowCount');
-    let shown = 0;
-    function updateRows(count) {
-      shown = Math.max(0, Math.min(count, rows.length));
-      rows.forEach((row, i) => row.style.display = i < shown ? 'table-row' : 'none');
-      rowCount.textContent = shown;
+    let visibleRows = 0;
+
+    function updateRows(number) {
+      visibleRows = Math.max(0, Math.min(number, rows.length));
+      rows.forEach((row, index) => row.classList.toggle('show', index < visibleRows));
+      rowCount.textContent = `${visibleRows} / ${rows.length} rows shown`;
     }
-    document.getElementById('nextRow').addEventListener('click', () => updateRows(shown + 1));
+
+    document.getElementById('nextRow').addEventListener('click', () => updateRows(visibleRows + 1));
     document.getElementById('showRows').addEventListener('click', () => updateRows(rows.length));
     document.getElementById('resetRows').addEventListener('click', () => updateRows(0));
     updateRows(0);
 
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('in'); });
-    }, {threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('in');
+      });
+    }, {threshold: 0.12});
+
+    document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
   </script>
 </body>
 </html>
